@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>细狗行不行</title>
+<script>
+alert("click me,细狗");
+</script>
+<style>
+    .button {
+      background: url(666.gif) no-repeat;
+      border: none;
+      color: white;
+      padding: 250px 363px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+}
+.text {
+    
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-background-size: 200% 100%;
+}
+</style>
+
+</head>
+<body>
+<button class="button" id="feiwu"></button>
+<abbr title="细狗行不行"></abbr>
+<p title="啧啧，这也不行啊细狗" id="cao" class="text"></p>
+<script>
+    var cao = 0;
+    var button = document.getElementById("feiwu");
+    var caoDisplay = document.getElementById("cao");
+    button.addEventListener("click", function() {
+        cao++;
+        caoDisplay.innerHTML = cao;
+});
+
+</script>
+</body>
+</html>
