@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-size: 2vmin;
+            }
+
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100;
+                height: 100vh;
+                background-color: #171717;
+                background-image: url('image/DM_20250323152045_001.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .title{
+                font-size: 10rem;
+                color: #f7f7f7;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p onclick="jump('part2.html')" class="title">计算机爱好者协会<span>34500</span></p>
+        <script>
+            function jump(target){
+                window.location.href = target;
+            }
+        </script>
+    </body>
+</html>
