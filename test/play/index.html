@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html>
-<form id="form">
-  <div class="field">
-    <label for="subject">subject</label>
-    <input type="text" name="subject" id="subject">
+<form id="computer-clinic-form">
+  <h1>计算机爱好者协会—义诊行动</h1>
+  
+  <div class="form-section">
+    <h2>基本信息</h2>
+    
+    <div class="form-group">
+      <label for="name">*01 姓名</label>
+      <input type="text" id="name" name="name" placeholder="请输入" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">*02 请填写手机号</label>
+      <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+      <small class="notice">此服务及隐私信息，请注意您在收件台身份。</small>
+    </div>
+    
+    <div class="form-group">
+      <label>*03 请选择性别</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" required> 男</label>
+        <label><input type="radio" name="gender" value="female"> 女</label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="department">*04 系部</label>
+      <select id="department" name="department" required>
+        <option value="" disabled selected>请选择系部</option>
+        <option value="intelligent-control">智能控制系统</option>
+        <option value="mechatronics">机电工程系统</option>
+        <option value="transportation">交通运输系统</option>
+        <option value="light-chemical">轻化工技术系统</option>
+        <option value="art-design">艺术设计系统</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="class">*06 班级</label>
+      <input type="text" id="class" name="class" placeholder="请输入" required>
+    </div>
   </div>
-  <div class="field">
-    <label for="name">name</label>
-    <input type="text" name="name" id="name">
+  
+  <div class="form-section">
+    <h2>问题反馈</h2>
+    
+    <div class="form-group">
+      <label>*05 [多选] 使用电脑过程中遇到的问题</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="problems" value="knowledge"> 因电脑相关知识不足，造成了使用困难</label>
+        <label><input type="checkbox" name="problems" value="software"> 软件不会安装</label>
+        <label><input type="checkbox" name="problems" value="cleaning"> 不会自行清洗电脑</label>
+        <label><input type="checkbox" name="problems" value="hardware"> 电脑故障或电脑故障的损坏</label>
+        <label><input type="checkbox" name="problems" value="repair"> 电脑维修相关的不了解</label>
+        <label><input type="checkbox" name="problems" value="other"> 其他</label>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <label for="event">event</label>
-    <input type="text" name="event" id="event">
-  </div>
-  <div class="field">
-    <label for="email">email</label>
-    <input type="text" name="email" id="email">
-  </div>
-  <div class="field">
-    <label for="phone">phone</label>
-    <input type="text" name="phone" id="phone">
-  </div>
-  <div class="field">
-    <label for="message">message</label>
-    <input type="text" name="message" id="message">
-  </div>
-
-  <input type="submit" id="button" value="Send Email" >
+  
+  <button type="submit" class="submit-btn">提交</button>
 </form>
 
 <script type="text/javascript"
