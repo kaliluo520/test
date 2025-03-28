@@ -88,8 +88,8 @@ select {
     <div class="form-group">
       <label>*03 请选择性别</label>
       <div class="radio-group">
-        <label><input type="radio" name="gender" value="male" required> 男</label>
-        <label><input type="radio" name="gender" value="female"> 女</label>
+        <label><input type="radio" name="gender" value="男" required> 男</label>
+        <label><input type="radio" name="gender" value="女"> 女</label>
       </div>
     </div>
     
@@ -97,11 +97,11 @@ select {
       <label for="department">*04 系部</label>
       <select id="department" name="department" required>
         <option value="" disabled selected>请选择系部</option>
-        <option value="intelligent-control">智能控制系统</option>
-        <option value="mechatronics">机电工程系统</option>
-        <option value="transportation">交通运输系统</option>
-        <option value="light-chemical">轻化工技术系统</option>
-        <option value="art-design">艺术设计系统</option>
+        <option value="智能控制系统">智能控制系统</option>
+        <option value="机电工程系统">机电工程系统</option>
+        <option value="交通运输系统">交通运输系统</option>
+        <option value="轻化工技术系统">轻化工技术系统</option>
+        <option value="艺术设计系统">艺术设计系统</option>
       </select>
     </div>
     
@@ -117,12 +117,12 @@ select {
     <div class="form-group">
       <label>*05 [多选] 使用电脑过程中遇到的问题</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" name="problems" value="knowledge"> 因电脑相关知识不足，造成了使用困难</label>
-        <label><input type="checkbox" name="problems" value="software"> 软件不会安装</label>
-        <label><input type="checkbox" name="problems" value="cleaning"> 不会自行清洗电脑</label>
-        <label><input type="checkbox" name="problems" value="hardware"> 电脑故障或电脑故障的损坏</label>
-        <label><input type="checkbox" name="problems" value="repair"> 电脑维修相关的不了解</label>
-        <label><input type="checkbox" name="problems" value="other"> 其他</label>
+        <label><input type="checkbox" name="problems" value="因电脑相关知识不足，造成了使用困难"> 因电脑相关知识不足，造成了使用困难</label>
+        <label><input type="checkbox" name="problems" value="软件不会安装"> 软件不会安装</label>
+        <label><input type="checkbox" name="problems" value="不会自行清洗电脑"> 不会自行清洗电脑</label>
+        <label><input type="checkbox" name="problems" value="电脑故障或电脑故障的损坏"> 电脑故障或电脑故障的损坏</label>
+        <label><input type="checkbox" name="problems" value="电脑维修相关的不了解"> 电脑维修相关的不了解</label>
+        <label><input type="checkbox" name="problems" value="其他"> 其他</label>
       </div>
     </div>
   </div>
@@ -130,6 +130,10 @@ select {
   <button type="submit" class="submit-btn">提交</button>
 </form>
 
+<!-- 添加提交成功的提示框 -->
+<div id="success-message" style="display:none;">
+  <p>提交成功！感谢您的报名。</p >
+</div>
 <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
