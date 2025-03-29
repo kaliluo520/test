@@ -6,165 +6,278 @@
     <title>计算机爱好者协会义诊行动</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
             color: #333;
+            background-color: #f5f7fa;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #f9f9f9;
+            background-color: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+        
+        /* 选项组样式 */
+        .option-group {
+            margin-bottom: 25px;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .radio-group, .checkbox-group {
-            margin-top: 5px;
-        }
-        .radio-option, .checkbox-option {
-            margin-bottom: 8px;
-        }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
+        .option-title {
             font-size: 16px;
-            border-radius: 4px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .required-star {
+            color: #ff4757;
+            margin-right: 6px;
+        }
+        
+        /* 单选和多选选项样式 */
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
             cursor: pointer;
-            display: block;
-            margin: 30px auto 0;
-            width: 200px;
         }
-        button:hover {
-            background-color: #2980b9;
+        .option-item:hover {
+            background-color: #e9ecef;
         }
-        .required {
-            color: red;
+        .option-item.selected {
+            background-color: #e3f2fd;
+            border-left: 3px solid #2196f3;
         }
-        .privacy-note {
+        
+        /* 隐藏原生单选/复选框 */
+        .option-input {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        /* 自定义单选按钮 */
+        .radio-custom {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #90a4ae;
+            border-radius: 50%;
+            margin-right: 12px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .radio-custom::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #2196f3;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.2s ease;
+        }
+        .option-input:checked + .radio-custom {
+            border-color: #2196f3;
+        }
+        .option-input:checked + .radio-custom::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* 自定义复选框 */
+        .checkbox-custom {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #90a4ae;
+            border-radius: 4px;
+            margin-right: 12px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .checkbox-custom::after {
+            content: '✓';
+            position: absolute;
+            color: #2196f3;
             font-size: 14px;
-            color: #666;
-            margin: 15px 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.2s ease;
         }
+        .option-input:checked + .checkbox-custom {
+            border-color: #2196f3;
+        }
+        .option-input:checked + .checkbox-custom::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* 选项标签 */
+        .option-label {
+            font-size: 15px;
+            color: #37474f;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>计算机爱好者协会义诊行动</h1>
+        <h1 align="center">计算机爱好者协会义诊行动</h1>
         
         <form action="https://formspree.io/f/xpwpjlzl" method="POST">
-            <div class="form-group">
-                <h3><span class="required">*</span>01 姓名</h3>
+            <div class="option-item">
+                <h3><span class="required">*</span>01 姓名</h3>&nbsp&nbsp&nbsp&nbsp&nbsp
                 <input type="text" name="name" placeholder="请输入" required>
             </div>
             
-            <div class="form-group">
-                <h3><span class="required">*</span>02 请填写手机号</h3>
+            <div class="option-item">
+                <h3><span class="required">*</span>02 请填写手机号</h3>&nbsp&nbsp&nbsp&nbsp&nbsp
                 <input type="tel" name="phone" placeholder="请输入手机号" required>
             </div>
             
-            <p class="privacy-note">此服务及隐私信息，请查看相关收藏者的身份。</p >
             
-            <div class="form-group">
-                <h3><span class="required">*</span>03 请选择性别</h3>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="male" name="gender" value="男" required>
-                        <label for="male">男</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="female" name="gender" value="女">
-                        <label for="female">女</label>
-                    </div>
-                </div>
+            <div>
+        <!-- 性别选择 -->
+        <div class="option-group">
+            <div class="option-title">
+                <span class="required-star">*</span>03 请选择性别
             </div>
             
-            <div class="form-group">
-                <h3><span class="required">*</span>04 系部</h3>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="dept1" name="department" value="智能控制系统" required>
-                        <label for="dept1">智能控制系统</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="dept2" name="department" value="机电工程系统">
-                        <label for="dept2">机电工程系统</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="dept3" name="department" value="交通运输系统">
-                        <label for="dept3">交通运输系统</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="dept4" name="department" value="轻化工技术系统">
-                        <label for="dept4">轻化工技术系统</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="dept5" name="department" value="艺术设计系统">
-                        <label for="dept5">艺术设计系统</label>
-                    </div>
-                </div>
+            <label class="option-item">
+                <input type="radio" name="gender" value="男" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">男</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="radio" name="gender" value="女" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">女</span>
+            </label>
+        </div>
+        
+        <!-- 系部选择 -->
+        <div class="option-group">
+            <div class="option-title">
+                <span class="required-star">*</span>04 系部
             </div>
             
-            <div class="form-group">
-                <h3><span class="required">*</span>05 [多选] 使用电脑过程中遇到的问题</h3>
-                <div class="checkbox-group">
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem1" name="problems" value="因电脑相关知识不足，造成了使用困难">
-                        <label for="problem1">因电脑相关知识不足，造成了使用困难</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem2" name="problems" value="软件不会安装">
-                        <label for="problem2">软件不会安装</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem3" name="problems" value="不会自行清洗电脑">
-                        <label for="problem3">不会自行清洗电脑</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem4" name="problems" value="电脑故障或电脑故障的损坏">
-                        <label for="problem4">电脑故障或电脑故障的损坏</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem5" name="problems" value="电脑维修相关的情况不了解">
-                        <label for="problem5">电脑维修相关的情况不了解</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="problem6" name="problems" value="其他">
-                        <label for="problem6">其他</label>
-                    </div>
-                </div>
+            <label class="option-item">
+                <input type="radio" name="department" value="智能控制系统" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">智能控制系统</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="radio" name="department" value="机电工程系统" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">机电工程系统</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="radio" name="department" value="交通运输系统" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">交通运输系统</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="radio" name="department" value="轻化工技术系统" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">轻化工技术系统</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="radio" name="department" value="艺术设计系统" class="option-input">
+                <span class="radio-custom"></span>
+                <span class="option-label">艺术设计系统</span>
+            </label>
+        </div>
+        
+        <!-- 问题选择 -->
+        <div class="option-group">
+            <div class="option-title">
+                <span class="required-star">*</span>05 [多选] 使用电脑过程中遇到的问题
             </div>
             
-            <div class="form-group">
-                <h3><span class="required">*</span>06 班级</h3>
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="因电脑相关知识不足，造成了使用困难" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">因电脑相关知识不足，造成了使用困难</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="软件不会安装" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">软件不会安装</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="不会自行清洗电脑" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">不会自行清洗电脑</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="电脑故障或电脑故障的损坏" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">电脑故障或电脑故障的损坏</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="电脑维修相关的情况不了解" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">电脑维修相关的情况不了解</span>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="problems" value="其他" class="option-input">
+                <span class="checkbox-custom"></span>
+                <span class="option-label">其他</span>
+            </label>
+        </div>
+    </div>
+
+            <div class="option-item">
+                <h3><span class="required">*</span>06 班级</h3>&nbsp&nbsp&nbsp&nbsp&nbsp
                 <input type="text" name="class" placeholder="请输入" required>
             </div>
+
+    <script>
+        // 添加选中效果
+        document.querySelectorAll('.option-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const parent = this.closest('.option-item');
+                if (this.checked) {
+                    parent.classList.add('selected');
+                    
+                    // 如果是单选按钮，取消同组其他选项的选中状态
+                    if (this.type === 'radio') {
+                        const name = this.name;
+                        document.querySelectorAll(`input[name="${name}"]`).forEach(otherInput => {
+                            if (otherInput !== this) {
+                                otherInput.closest('.option-item').classList.remove('selected');
+                            }
+                        });
+                    }
+                } else {
+                    parent.classList.remove('selected');
+                }
+            });
+            
+            // 初始化选中状态
+            if (input.checked) {
+                input.closest('.option-item').classList.add('selected');
+            }
+        });
+    </script>
             
             <button type="submit">提交</button>
         </form>
