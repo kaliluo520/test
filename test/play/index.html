@@ -1,144 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<style>
-#computer-clinic-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.form-section {
-  margin-bottom: 25px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-h1, h2 {
-  color: #333;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="tel"],
-select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.radio-group, .checkbox-group {
-  margin-top: 5px;
-}
-
-.radio-group label, .checkbox-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: normal;
-}
-
-.notice {
-  color: #666;
-  font-style: italic;
-}
-
-.submit-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.submit-btn:hover {
-  background-color: #45a049;
-}
-</style></head>
-<form id="computer-clinic-form">
-  <h1>计算机爱好者协会—义诊行动</h1>
-  
-  <div class="form-section">
-    <h2>基本信息</h2>
-    
-    <div class="form-group">
-      <label for="name">*01 姓名</label>
-      <input type="text" id="name" name="name" placeholder="请输入" required>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机爱好者协会义诊行动</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-option, .checkbox-option {
+            margin-bottom: 8px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .required {
+            color: red;
+        }
+        .privacy-note {
+            font-size: 14px;
+            color: #666;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>计算机爱好者协会义诊行动</h1>
+        
+        <form action="https://formspree.io/f/xpwpjlzl" method="POST">
+            <div class="form-group">
+                <h3><span class="required">*</span>01 姓名</h3>
+                <input type="text" name="name" placeholder="请输入" required>
+            </div>
+            
+            <div class="form-group">
+                <h3><span class="required">*</span>02 请填写手机号</h3>
+                <input type="tel" name="phone" placeholder="请输入手机号" required>
+            </div>
+            
+            <p class="privacy-note">此服务及隐私信息，请查看相关收藏者的身份。</p >
+            
+            <div class="form-group">
+                <h3><span class="required">*</span>03 请选择性别</h3>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="男" required>
+                        <label for="male">男</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="女">
+                        <label for="female">女</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3><span class="required">*</span>04 系部</h3>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="dept1" name="department" value="智能控制系统" required>
+                        <label for="dept1">智能控制系统</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="dept2" name="department" value="机电工程系统">
+                        <label for="dept2">机电工程系统</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="dept3" name="department" value="交通运输系统">
+                        <label for="dept3">交通运输系统</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="dept4" name="department" value="轻化工技术系统">
+                        <label for="dept4">轻化工技术系统</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="dept5" name="department" value="艺术设计系统">
+                        <label for="dept5">艺术设计系统</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3><span class="required">*</span>05 [多选] 使用电脑过程中遇到的问题</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem1" name="problems" value="因电脑相关知识不足，造成了使用困难">
+                        <label for="problem1">因电脑相关知识不足，造成了使用困难</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem2" name="problems" value="软件不会安装">
+                        <label for="problem2">软件不会安装</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem3" name="problems" value="不会自行清洗电脑">
+                        <label for="problem3">不会自行清洗电脑</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem4" name="problems" value="电脑故障或电脑故障的损坏">
+                        <label for="problem4">电脑故障或电脑故障的损坏</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem5" name="problems" value="电脑维修相关的情况不了解">
+                        <label for="problem5">电脑维修相关的情况不了解</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="problem6" name="problems" value="其他">
+                        <label for="problem6">其他</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h3><span class="required">*</span>06 班级</h3>
+                <input type="text" name="class" placeholder="请输入" required>
+            </div>
+            
+            <button type="submit">提交</button>
+        </form>
     </div>
-    
-    <div class="form-group">
-      <label for="phone">*02 请填写手机号</label>
-      <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
-      <small class="notice">此服务及隐私信息，请注意您在收件台身份。</small>
-    </div>
-    
-    <div class="form-group">
-      <label>*03 请选择性别</label>
-      <div class="radio-group">
-        <label><input type="radio" name="gender" value="男" required> 男</label>
-        <label><input type="radio" name="gender" value="女"> 女</label>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <label for="department">*04 系部</label>
-      <select id="department" name="department" required>
-        <option value="" disabled selected>请选择系部</option>
-        <option value="智能控制系统">智能控制系统</option>
-        <option value="机电工程系统">机电工程系统</option>
-        <option value="交通运输系统">交通运输系统</option>
-        <option value="轻化工技术系统">轻化工技术系统</option>
-        <option value="艺术设计系统">艺术设计系统</option>
-      </select>
-    </div>
-    
-    <div class="form-group">
-      <label for="class">*06 班级</label>
-      <input type="text" id="class" name="class" placeholder="请输入" required>
-    </div>
-  </div>
-  
-  <div class="form-section">
-    <h2>问题反馈</h2>
-    
-    <div class="form-group">
-      <label>*05 [多选] 使用电脑过程中遇到的问题</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="problems" value="因电脑相关知识不足，造成了使用困难"> 因电脑相关知识不足，造成了使用困难</label>
-        <label><input type="checkbox" name="problems" value="软件不会安装"> 软件不会安装</label>
-        <label><input type="checkbox" name="problems" value="不会自行清洗电脑"> 不会自行清洗电脑</label>
-        <label><input type="checkbox" name="problems" value="电脑故障或电脑故障的损坏"> 电脑故障或电脑故障的损坏</label>
-        <label><input type="checkbox" name="problems" value="电脑维修相关的不了解"> 电脑维修相关的不了解</label>
-        <label><input type="checkbox" name="problems" value="其他"> 其他</label>
-      </div>
-    </div>
-  </div>
-  
-  <button type="submit" class="submit-btn">提交</button>
-</form>
-
-<!-- 添加提交成功的提示框 -->
-<div id="success-message" style="display:none;">
-  <p>提交成功！感谢您的报名。</p >
-</div>
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('KnUHg9tUvygMuN4in')
-</script>
-<script src="script.js"></script>
+</body>
 </html>
